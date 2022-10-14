@@ -1,0 +1,17 @@
+#!/bin/bash
+min=$1               
+if [[ $min -gt $2 ]] 
+then                 
+  min=$2             
+fi                   
+while [ $min -gt 0 ]  
+do
+  remainder1=$(( $1 % $min )) 
+  remainder2=$(( $2 % $min ))  
+  if [[ $remainder1 -eq 0 ]] && [[ $remainder2 -eq 0 ]]  
+    then
+    echo $min
+    break
+  fi
+  min=$(( $min - 1))  
+done
