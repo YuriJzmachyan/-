@@ -1,0 +1,20 @@
+#! /bin/bash
+biggerNum=$2;
+while [[ $biggerNum -ge $1 ]]
+do 
+    j=$((biggerNum/2));
+    isPrime=1;
+    while [[ $j -gt 1 ]]
+    do
+        if [[ $biggerNum%$j -eq 0 ]]
+        then
+            isPrime=0;
+        fi
+        j=$(( $j-1 ));
+    done
+    if [[ $isPrime == 1 ]]
+    then
+        echo $biggerNum;
+    fi
+    biggerNum=$(( $biggerNum-1 ));
+done
